@@ -13,7 +13,15 @@ jobs:
           run: echo "Bonjour ISEP Diamniadio !"
 
         - name: Présenter la machine
-          run: |
+          run:
             whoami
             uname -a
             date
+        - name: Lister les fichiers avant
+          run: ls -la
+
+        - name: Récupérer le code
+          uses: actions/checkout@v7
+
+        - name: Lister les fichiers après
+          run: ls -la
